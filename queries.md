@@ -4,11 +4,15 @@
 
 ### 1. All the companies whose name match 'Babelgum'. Retrieve only their `name` field.
 
-Project: {name : "Babelgum"}
+Filter: {name : "Babelgum"}
 
 ### 2. All the companies that have more than 5000 employees. Limit the search to 20 companies and sort them by **number of employees**.
 
-<!-- Your Code Goes Here -->
+Filter: {number_of_employees: {$gte: 5000}}
+
+Sort: {number_of_employees: 1}
+
+Limit: 20
 
 ### 3. All the companies founded between 2000 and 2005, both years included. Retrieve only the `name` and `founded_year` fields.
 
