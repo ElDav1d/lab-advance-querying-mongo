@@ -68,11 +68,15 @@ Limit: 1000
 
 ### 12. All the companies founded before 2000 that have an acquisition amount of more than 10.000.000
 
-<!-- Your Code Goes Here -->
+Filter: {$and:[{founded_year: { $gt: 2000}}, {"acquisition.price_amount": {$gt: 10000000}}]}
 
 ### 13. All the companies that have been acquired after 2010, order by the acquisition amount, and retrieve only their `name` and `acquisition` field.
 
-<!-- Your Code Goes Here -->
+Filter: {$and:[{"acquisition.price_amount": {$type: "int"}}, {"acquisition.acquired_year": {$gt: 2010}}]}
+
+Project: {acquisition: 1, name: 1}
+
+Sort: {"acquisition.price_amount": 1}
 
 ### 14. Order the companies by their `founded year`, retrieving only their `name` and `founded year`.
 
